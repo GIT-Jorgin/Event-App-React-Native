@@ -80,7 +80,7 @@ export default function App() {
   }
   function MyHome(){
     return(
-      <Tab.Navigator initialRouteName="Event" tabBar={props => <MyTabBar {...props} />}>
+      <Tab.Navigator swipeEnabled={false} initialRouteName="Event" tabBar={props => <MyTabBar {...props} />}>
         <Tab.Screen name="Home" component={Test} />
         <Tab.Screen name="Event" component={Home} />
         <Tab.Screen name="Mask" component={Test} />
@@ -105,13 +105,31 @@ export default function App() {
           }
         })}
         sharedElementsConfig = {( route ) => {
-          const { item, id } = route.params;
+          const { data } = route.params;
           return [
             {
-              id: `item.${id}.photo`,
+              id: `item.${data.id}.photo`,
               animation: 'move',
               resize: 'clip',
               align: 'center-top'
+            },
+            {
+              id: `item.${data.id}.title`,
+              animation: 'fade',
+              resize: 'clip',
+              align: 'center'
+            },
+            {
+              id: `item.${data.id}.local`,
+              animation: 'fade',
+              resize: 'clip',
+              align: 'center'
+            },
+            {
+              id: `item.${data.id}.description`,
+              animation: 'fade',
+              resize: 'clip',
+              align: 'center'
             },
           ];
         }} />
