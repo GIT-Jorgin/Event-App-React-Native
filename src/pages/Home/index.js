@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
 import TouchableScale from 'react-native-touchable-scale';
-import * as Animatable from 'react-native-animatable';
 import {AntDesign, Ionicons, FontAwesome5 } from '@expo/vector-icons'; 
 import Carousel from 'react-native-snap-carousel';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -107,11 +106,11 @@ shadowOffset: {
 shadowOpacity: 0.58,
 shadowRadius: 16.00,
 
-elevation: 24, width: '100%', height: 60, borderTopLeftRadius: 25, borderTopRightRadius: 25, backgroundColor: '#FFF', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
-        <Animatable.View animation="slideInUp" duration={500} delay={500}><AntDesign name="home" size={27} color="#AA00FF" /></Animatable.View>
-        <Animatable.View animation="slideInUp" duration={500} delay={500}><Ionicons name="ios-search" size={27} color="#7B7B7B" /></Animatable.View>
-        <Animatable.View animation="slideInUp" duration={500} delay={500}><FontAwesome5 name="user-alt" size={27} color="#7B7B7B" /></Animatable.View>
-        <Animatable.View animation="slideInUp" duration={500} delay={500}><AntDesign name="bars" size={27} color="#7B7B7B" /></Animatable.View>
+elevation: 24, width: '100%', height: 65, borderRadius: 100, backgroundColor: '#FFF', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
+        <AntDesign name="home" size={27} color="#AA00FF" />
+        <Ionicons name="ios-search" size={27} color="#7B7B7B" />
+        <FontAwesome5 name="user-alt" size={27} color="#7B7B7B" />
+        <AntDesign name="bars" size={27} color="#7B7B7B" />
       </View>
     </View>
   );
