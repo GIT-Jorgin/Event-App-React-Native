@@ -20,10 +20,10 @@ export default function Home({ navigation }) {
     return (
       <TouchableScale tension={50} onPress={() => navigation.navigate('Details', {data: item})}>
       <SharedElement id={`item.${item.id}.photo`}>
-          <Image style={{width: itemWidth, height: 450, resizeMode: 'cover', borderRadius: 25}} source={item.img} />
+          <Image style={styles.carouselItem} source={item.img} />
           </SharedElement>
-          <View style={{width: '100%', height: '100%', position: 'absolute'}}>
-            <View style={{flex: 1, padding: 15, justifyContent: 'space-between'}}>
+          <View style={styles.carouselContent}>
+            <View style={styles.carouselContentContainer}>
                 <View style={{padding: 5}}>
                   <Text style={{color: '#FFF', marginTop: 10}}>LIVE</Text>
                   <SharedElement id={`item.${item.id}.title`}>
@@ -78,35 +78,27 @@ export default function Home({ navigation }) {
       itemWidth={itemWidth}
       renderItem={renderItem}
       />
-      <View style={{width: '100%', alignItems: 'center', marginTop: 20}}>
-        <Text style={{marginRight: 'auto', marginLeft: 20, color: '#BCBBBD', marginBottom: 10}}>CATEGORIAS</Text>
-        <View style={{width: '90%', flexDirection: 'row', justifyContent: 'space-between'}}>
-          <ImageBackground style={{ width: 180, height: 220, alignItems: 'center', justifyContent: 'center'}} imageStyle={{borderRadius: 10}} source={EDM} >
-            <Text style={{color: 'white', width: 170, textAlign: 'center', fontSize: 20}}>ELECTRONIC DANCE MUSIC</Text>
+      <View style={styles.category}>
+        <Text style={styles.categoryText}>CATEGORIAS</Text>
+        <View style={styles.categoryContent}>
+          <ImageBackground style={styles.categoryItemImage} imageStyle={{borderRadius: 10}} source={EDM} >
+            <Text style={styles.categoryItemText}>ELECTRONIC DANCE MUSIC</Text>
           </ImageBackground>
-          <ImageBackground style={{ width: 180, height: 220, alignItems: 'center', justifyContent: 'center'}} imageStyle={{borderRadius: 10}} source={sertanejo} >
-            <Text style={{color: 'white', width: 170, textAlign: 'center', fontSize: 20}}>SERTANEJO</Text>
+          <ImageBackground style={styles.categoryItemImage} imageStyle={{borderRadius: 10}} source={sertanejo} >
+            <Text style={styles.categoryItemText}>SERTANEJO</Text>
           </ImageBackground>
         </View>
         <View style={{width: '90%', flexDirection: 'row', justifyContent: 'space-between', marginTop: 15, marginBottom: 20}}>
-        <ImageBackground style={{ width: 180, height: 220, alignItems: 'center', justifyContent: 'center'}} imageStyle={{borderRadius: 10}} source={rap} >
-          <Text style={{color: 'white', width: 170, textAlign: 'center', fontSize: 20}}>RAP</Text>
+        <ImageBackground style={styles.categoryItemImage} imageStyle={{borderRadius: 10}} source={rap} >
+          <Text style={styles.categoryItemText}>RAP</Text>
         </ImageBackground>  
-        <ImageBackground style={{ width: 180, height: 220, alignItems: 'center', justifyContent: 'center'}} imageStyle={{borderRadius: 10}} source={funk} >
-          <Text style={{color: 'white', width: 170, textAlign: 'center', fontSize: 20}}>FUNK</Text>
+        <ImageBackground style={styles.categoryItemImage} imageStyle={{borderRadius: 10}} source={funk} >
+          <Text style={styles.categoryItemText}>FUNK</Text>
         </ImageBackground>
         </View>
       </View>
       </ScrollView>
-      <View style={{shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 12,
-},
-shadowOpacity: 0.58,
-shadowRadius: 16.00,
-
-elevation: 24, width: '100%', height: 65, borderRadius: 100, backgroundColor: '#FFF', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
+      <View style={styles.bottomBar}>
         <AntDesign name="home" size={27} color="#AA00FF" />
         <Ionicons name="ios-search" size={27} color="#7B7B7B" />
         <FontAwesome5 name="user-alt" size={27} color="#7B7B7B" />
